@@ -1,25 +1,25 @@
 {
-  "title": "Desmos Block Explorer",
-  "network": "morpheus-apollo-2",
-  "icon": "https://raw.githubusercontent.com/forbole/big-dipper-assets/master/desmos/icon.svg?sanitize=true",
+	"title": "Stratos Block Explorer",
+  "network": "testchain_1-1",
+  "icon": "https://raw.githubusercontent.com/stratosnet/big-dipper-2.0-cosmos/base-v2.1.0-stratos/assets/icon.svg?sanitize=true",
   "logo": {
-    "default": "https://raw.githubusercontent.com/forbole/big-dipper-assets/master/desmos/logo.svg?sanitize=true"
+    "default": "https://raw.githubusercontent.com/stratosnet/big-dipper-2.0-cosmos/base-v2.1.0-stratos/assets/logo.svg?sanitize=true"
   },
   "prefix": {
-    "consensus": "desmosvalcons",
-    "validator": "desmosvaloper",
-    "account": "desmos"
+    "consensus": "stvalcons",
+    "validator": "stvaloper",
+    "account": "st"
   },
   "genesis": {
-    "time": "2021-07-13T08:00:00",
+    "time": "2022-06-20T13:38:18",
     "height": 1
   },
-  "primaryTokenUnit": "udaric",
-  "votingPowerTokenUnit": "udaric",
+  "primaryTokenUnit": "ustos",
+  "votingPowerTokenUnit": "ustos",
   "tokenUnits": {
     "udaric": {
-      "display": "daric",
-      "exponent": 6
+      "display": "ustos",
+      "exponent": 9
     }
   },
   "extra": {
