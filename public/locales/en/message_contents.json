@@ -55,5 +55,21 @@
   "MsgGrantAllowance": "<0>{{granter}}</0> granted allowance for <1>{{grantee}}</1>",
   "MsgRevokeAllowance": "<0>{{granter}}</0> revoked allowance for <1>{{grantee}}</1>",
   "MsgCreateVestingAccount": "Vesting account created for <0>{{toAddress}}</0>",
-  "MsgCreatePeriodicVestingAccount": "Periodic vesting account created for <0>{{toAddress}}</0>"
+  "MsgCreatePeriodicVestingAccount": "Periodic vesting account created for <0>{{toAddress}}</0>",
+  "txFoundationDepositContent": "<0>{{user}}</0> deposited <1>{{amount}}</1> to foundation account",
+  "txSlashingResourceNodeContent": "<0>{{user}}</0> slashed <1>{{networkAddress}}</1> by <2>{{amount}}</2>",
+  "txVolumeReportContent": "<0>{{user}}</0> sent volume report <1>{{reportReference}}</1>",
+  "txWithdrawContent": "<0>{{from}}</0> withdrew <1>{{amount}}</1> reward to <2>{{user}}</2>",
+  "txCreateMetaNodeContent": "<0>{{user}}</0> created meta node <1>{{networkAddress}}</1>",
+  "txCreateResourceNodeContent": "<0>{{user}}</0> created resource node <1>{{networkAddress}}</1>",
+  "txMetaNodeRegistrationVoteContent": "<0>{{user}}</0> voted to meta node <1>{{candidateNetworkAddress}}</1> registration",
+  "txRemoveMetaNodeContent": "<0>{{user}}</0> removed meta node <1>{{metaNodeAddress}}</1>",
+  "txRemoveResourceNodeContent": "<0>{{user}}</0> removed resource node <1>{{resourceNodeAddress}}</1>",
+  "txUpdateEffectiveDepositContent": "resource node <0>{{networkAddress}}</0> updated effective deposit to <1>{{effectiveTokens}}</1>",
+  "txUpdateMetaNodeContent": "<0>{{user}}</0> updated meta node <1>{{networkAddress}}</1>",
+  "txUpdateMetaNodeDepositContent": "<0>{{user}}</0> deposit <1>{{depositDelta}}</1> to meta node <2>{{networkAddress}}</2>",
+  "txUpdateResourceNodeContent": "<0>{{user}}</0> updated resource node <1>{{networkAddress}}</1>",
+  "txUpdateResourceNodeDepositContent": "<0>{{user}}</0> deposit <1>{{depositDelta}}</1> to resource node <2>{{networkAddress}}</2>",
+  "txFileUploadContent": "<0>{{from}}</0> reported file <1>{{fileHash}}</1> is uploaded by <2>{{user}}</2>",
+  "txPrepayContent": "<0>{{sender}}</0> prepayed <1>{{amount}}</1> for <2>{{user}}</2>"
 }
