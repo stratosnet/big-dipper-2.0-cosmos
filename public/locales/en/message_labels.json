@@ -52,6 +52,7 @@
   "txPotTxLabel": "POT Transaction",
   "txRegisterTxLabel": "Register Transaction",
   "txSdsTxLabel": "SDS Transaction",
+  "txEthereumTxLabel": "EVM Transaction",
   "MsgGrant": "Grant",
   "MsgRevoke": "Revoke",
   "MsgGrantAllowance": "Grant Allowance",
