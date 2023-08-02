@@ -26,7 +26,7 @@ const RemoveResourceNode = (props: {
           ),
         ]}
         values={{
-            resourceNodeAddress: message.resourceNodeAddress,
+          resourceNodeAddress: message.resourceNodeAddress,
         }}
       />
     </Typography>

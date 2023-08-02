@@ -27,7 +27,7 @@ const VolumeReport = (props: {
           ),
         ]}
         values={{
-            reportReference: message.reportReference,
+          reportReference: message.reportReference,
         }}
       />
     </Typography>

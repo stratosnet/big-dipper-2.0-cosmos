@@ -35,7 +35,7 @@ const FileUpload = (props: {
           ),
         ]}
         values={{
-            fileHash: message.fileHash,
+          fileHash: message.fileHash,
         }}
       />
     </Typography>

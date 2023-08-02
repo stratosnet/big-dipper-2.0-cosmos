@@ -26,7 +26,7 @@ const UpdateMetaNode = (props: {
           ),
         ]}
         values={{
-            networkAddress: message.networkAddress,
+          networkAddress: message.networkAddress,
         }}
       />
     </Typography>

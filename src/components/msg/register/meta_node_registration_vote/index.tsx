@@ -11,7 +11,8 @@ const MetaNodeRegistrationVote = (props: {
   const { message } = props;
 
   const voterOwnerAddress = useProfileRecoil(message.voterOwnerAddress);
-  const voterOwnerAddressMoniker = voterOwnerAddress ? voterOwnerAddress?.name : message.voterOwnerAddress;
+  const voterOwnerAddressMoniker = voterOwnerAddress ? voterOwnerAddress?.name : message
+    .voterOwnerAddress;
 
   return (
     <Typography>
@@ -26,7 +27,7 @@ const MetaNodeRegistrationVote = (props: {
           ),
         ]}
         values={{
-            candidateNetworkAddress: message.candidateNetworkAddress,
+          candidateNetworkAddress: message.candidateNetworkAddress,
         }}
       />
     </Typography>

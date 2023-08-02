@@ -59,7 +59,7 @@
   "txFoundationDepositContent": "<0>{{user}}</0> deposited <1>{{amount}}</1> to foundation account",
   "txSlashingResourceNodeContent": "<0>{{user}}</0> slashed <1>{{networkAddress}}</1> by <2>{{amount}}</2>",
   "txVolumeReportContent": "<0>{{user}}</0> sent volume report <1>{{reportReference}}</1>",
-  "txWithdrawContent": "<0>{{from}}</0> withdrew <1>{{amount}}</1> reward to <2>{{user}}</2>",
+  "txWithdrawContent": "<0>{{from}}</0> withdrew <2>{{amount}}</2> reward to <1>{{user}}</1>",
   "txCreateMetaNodeContent": "<0>{{user}}</0> created meta node <1>{{networkAddress}}</1>",
   "txCreateResourceNodeContent": "<0>{{user}}</0> created resource node <1>{{networkAddress}}</1>",
   "txMetaNodeRegistrationVoteContent": "<0>{{user}}</0> voted to meta node <1>{{candidateNetworkAddress}}</1> registration",
@@ -70,6 +70,6 @@
   "txUpdateMetaNodeDepositContent": "<0>{{user}}</0> deposit <1>{{depositDelta}}</1> to meta node <2>{{networkAddress}}</2>",
   "txUpdateResourceNodeContent": "<0>{{user}}</0> updated resource node <1>{{networkAddress}}</1>",
   "txUpdateResourceNodeDepositContent": "<0>{{user}}</0> deposit <1>{{depositDelta}}</1> to resource node <2>{{networkAddress}}</2>",
-  "txFileUploadContent": "<0>{{from}}</0> reported file <1>{{fileHash}}</1> is uploaded by <2>{{user}}</2>",
-  "txPrepayContent": "<0>{{sender}}</0> prepayed <1>{{amount}}</1> for <2>{{user}}</2>"
+  "txFileUploadContent": "<0>{{from}}</0> reported file <2>{{fileHash}}</2> is uploaded by <1>{{user}}</1>",
+  "txPrepayContent": "<0>{{sender}}</0> prepayed <2>{{amount}}</2> for <1>{{user}}</1>"
 }

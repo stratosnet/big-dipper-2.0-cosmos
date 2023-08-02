@@ -402,7 +402,102 @@ const getDataByType = (type: string) => {
       tagTheme: 'four',
       tagDisplay: 'txUnblockUserLabel',
     },
-
+    '/stratos.pot.v1.MsgFoundationDeposit': {
+      model: MODELS.MsgFoundationDeposit,
+      content: COMPONENTS.FoundationDeposit,
+      tagTheme: 'pot',
+      tagDisplay: 'txPotTxLabel',
+    },
+    '/stratos.pot.v1.MsgSlashingResourceNode': {
+      model: MODELS.MsgSlashingResourceNode,
+      content: COMPONENTS.SlashingResourceNode,
+      tagTheme: 'pot',
+      tagDisplay: 'txPotTxLabel',
+    },
+    '/stratos.pot.v1.MsgVolumeReport': {
+      model: MODELS.MsgVolumeReport,
+      content: COMPONENTS.VolumeReport,
+      tagTheme: 'pot',
+      tagDisplay: 'txPotTxLabel',
+    },
+    '/stratos.pot.v1.MsgWithdraw': {
+      model: MODELS.MsgWithdraw,
+      content: COMPONENTS.Withdraw,
+      tagTheme: 'pot',
+      tagDisplay: 'txPotTxLabel',
+    },
+    '/stratos.register.v1.MsgCreateResourceNode': {
+      model: MODELS.MsgCreateResourceNode,
+      content: COMPONENTS.CreateResourceNode,
+      tagTheme: 'register',
+      tagDisplay: 'txRegisterTxLabel',
+    },
+    '/stratos.register.v1.MsgCreateMetaNode': {
+      model: MODELS.MsgCreateMetaNode,
+      content: COMPONENTS.CreateMetaNode,
+      tagTheme: 'register',
+      tagDisplay: 'txRegisterTxLabel',
+    },
+    '/stratos.register.v1.MsgMetaNodeRegistrationVote': {
+      model: MODELS.MsgMetaNodeRegistrationVote,
+      content: COMPONENTS.MetaNodeRegistrationVote,
+      tagTheme: 'register',
+      tagDisplay: 'txRegisterTxLabel',
+    },
+    '/stratos.register.v1.MsgRemoveMetaNode': {
+      model: MODELS.MsgRemoveMetaNode,
+      content: COMPONENTS.RemoveMetaNode,
+      tagTheme: 'register',
+      tagDisplay: 'txRegisterTxLabel',
+    },
+    '/stratos.register.v1.MsgRemoveResourceNode': {
+      model: MODELS.MsgRemoveResourceNode,
+      content: COMPONENTS.RemoveResourceNode,
+      tagTheme: 'register',
+      tagDisplay: 'txRegisterTxLabel',
+    },
+    '/stratos.register.v1.MsgUpdateEffectiveDeposit': {
+      model: MODELS.MsgUpdateEffectiveDeposit,
+      content: COMPONENTS.UpdateEffectiveDeposit,
+      tagTheme: 'register',
+      tagDisplay: 'txRegisterTxLabel',
+    },
+    '/stratos.register.v1.MsgUpdateMetaNode': {
+      model: MODELS.MsgUpdateMetaNode,
+      content: COMPONENTS.UpdateMetaNode,
+      tagTheme: 'register',
+      tagDisplay: 'txRegisterTxLabel',
+    },
+    '/stratos.register.v1.MsgUpdateMetaNodeDeposit': {
+      model: MODELS.MsgUpdateMetaNodeDeposit,
+      content: COMPONENTS.UpdateMetaNodeDeposit,
+      tagTheme: 'register',
+      tagDisplay: 'txRegisterTxLabel',
+    },
+    '/stratos.register.v1.MsgUpdateResourceNode': {
+      model: MODELS.MsgUpdateResourceNode,
+      content: COMPONENTS.UpdateResourceNode,
+      tagTheme: 'register',
+      tagDisplay: 'txRegisterTxLabel',
+    },
+    '/stratos.register.v1.MsgUpdateResourceNodeDeposit': {
+      model: MODELS.MsgUpdateResourceNodeDeposit,
+      content: COMPONENTS.UpdateResourceNodeDeposit,
+      tagTheme: 'register',
+      tagDisplay: 'txRegisterTxLabel',
+    },
+    '/stratos.sds.v1.MsgFileUpload': {
+      model: MODELS.MsgFileUpload,
+      content: COMPONENTS.FileUpload,
+      tagTheme: 'sds',
+      tagDisplay: 'txSdsTxLabel',
+    },
+    '/stratos.sds.v1.MsgPrepay': {
+      model: MODELS.MsgPrepay,
+      content: COMPONENTS.Prepay,
+      tagTheme: 'sds',
+      tagDisplay: 'txSdsTxLabel',
+    },
   };
 
   if (defaultTypeToModel[type]) return defaultTypeToModel[type];

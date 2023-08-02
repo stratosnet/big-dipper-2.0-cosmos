@@ -1,9 +1,7 @@
 import React from 'react';
 import Trans from 'next-translate/Trans';
 import { Typography } from '@material-ui/core';
-import { Name } from '@components';
 import { MsgUpdateEffectiveDeposit } from '@models';
-import { useProfileRecoil } from '@recoil/profiles';
 
 const UpdateEffectiveDeposit = (props: {
   message: MsgUpdateEffectiveDeposit;
@@ -15,8 +13,8 @@ const UpdateEffectiveDeposit = (props: {
       <Trans
         i18nKey="message_contents:txUpdateEffectiveDepositContent"
         values={{
-            networkAddress: message.networkAddress,
-            effectiveTokens: message.effectiveTokens,
+          networkAddress: message.networkAddress,
+          effectiveTokens: message.effectiveTokens,
         }}
       />
     </Typography>

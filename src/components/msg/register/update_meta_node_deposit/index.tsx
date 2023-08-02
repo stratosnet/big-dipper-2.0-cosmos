@@ -5,8 +5,8 @@ import { Name } from '@components';
 import { MsgUpdateMetaNodeDeposit } from '@models';
 import { useProfileRecoil } from '@recoil/profiles';
 import {
-    formatToken, formatNumber,
-  } from '@utils/format_token';
+  formatToken, formatNumber,
+} from '@utils/format_token';
 
 const UpdateMetaNodeDeposit = (props: {
   message: MsgUpdateMetaNodeDeposit;
@@ -32,8 +32,8 @@ const UpdateMetaNodeDeposit = (props: {
           ),
         ]}
         values={{
-            depositDelta: parsedDepositDelta,
-            networkAddress: message.networkAddress,
+          depositDelta: parsedDepositDelta,
+          networkAddress: message.networkAddress,
         }}
       />
     </Typography>

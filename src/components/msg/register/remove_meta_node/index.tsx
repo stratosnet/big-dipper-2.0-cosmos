@@ -26,7 +26,7 @@ const RemoveMetaNode = (props: {
           ),
         ]}
         values={{
-            metaNodeAddress: message.metaNodeAddress,
+          metaNodeAddress: message.metaNodeAddress,
         }}
       />
     </Typography>

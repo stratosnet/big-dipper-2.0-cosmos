@@ -1,9 +1,9 @@
 import React from 'react';
 import Trans from 'next-translate/Trans';
 import {
-    formatToken, formatNumber,
-  } from '@utils/format_token';
-  import useTranslation from 'next-translate/useTranslation';
+  formatToken, formatNumber,
+} from '@utils/format_token';
+import useTranslation from 'next-translate/useTranslation';
 import { Typography } from '@material-ui/core';
 import { Name } from '@components';
 import { MsgPrepay } from '@models';
@@ -19,7 +19,8 @@ const Prepay = (props: {
   const senderAddressMoniker = senderAddress ? senderAddress?.name : message.sender;
 
   const beneficiaryAddress = useProfileRecoil(message.beneficiary);
-  const beneficiaryAddressMoniker = beneficiaryAddress ? beneficiaryAddress?.name : message.beneficiary;
+  const beneficiaryAddressMoniker = beneficiaryAddress ? beneficiaryAddress?.name : message
+    .beneficiary;
 
   const parsedAmount = message?.amount?.map((x) => {
     const amount = formatToken(x.amount, x.denom);
@@ -45,7 +46,7 @@ const Prepay = (props: {
           ),
         ]}
         values={{
-            amount: parsedAmount,
+          amount: parsedAmount,
         }}
       />
     </Typography>

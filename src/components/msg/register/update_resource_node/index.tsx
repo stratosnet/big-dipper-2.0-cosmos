@@ -26,7 +26,7 @@ const UpdateResourceNode = (props: {
           ),
         ]}
         values={{
-            networkAddress: message.networkAddress,
+          networkAddress: message.networkAddress,
         }}
       />
     </Typography>
