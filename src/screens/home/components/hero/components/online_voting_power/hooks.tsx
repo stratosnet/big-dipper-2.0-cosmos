@@ -51,7 +51,9 @@ export const useOnlineVotingPower = () => {
 
     return {
       activeValidators,
-      votingPower,
+      votingPower:numeral(
+        formatToken(votingPower, chainConfig.votingPowerTokenUnit).value,
+      ).value(),
       totalVotingPower: numeral(
         formatToken(bonded, chainConfig.votingPowerTokenUnit).value,
       ).value(),
