@@ -16,6 +16,7 @@
   },
   "primaryTokenUnit": "udsm",
   "votingPowerTokenUnit": "udsm",
+  "powerReduction":1000000,
   "tokenUnits": {
     "udsm": {
       "display": "dsm",

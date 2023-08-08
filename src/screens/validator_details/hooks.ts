@@ -1,6 +1,8 @@
 import {
   useState, useEffect,
 } from 'react';
+import numeral from 'numeral';
+import Big from 'big.js';
 import * as R from 'ramda';
 import { useRouter } from 'next/router';
 import { formatToken } from '@utils/format_token';
@@ -153,14 +155,16 @@ export const useValidatorDetails = () => {
     // votingPower
     // ============================
     const formatVotingPower = () => {
-      const selfVotingPower = R.pathOr(0, ['validatorVotingPowers', 0, 'votingPower'], data.validator[0]);
+      const powerReduction = chainConfig?.powerReduction ?? 1;
+      const selfVotingPowerReducted = data?.validator[0]?.validatorVotingPowers?.[0]?.votingPower ?? 0
+      const votingPowerOverall = data?.stakingPool?.[0]?.bonded ?? 0;
+      const selfVotingPower = Big(selfVotingPowerReducted).mul(powerReduction).toNumber()
 
       const votingPower = {
-        self: selfVotingPower,
-        overall: formatToken(
-          R.pathOr(0, ['stakingPool', 0, 'bonded'], data),
-          chainConfig.votingPowerTokenUnit,
-        ),
+        self: numeral(
+          formatToken(selfVotingPower, chainConfig.votingPowerTokenUnit).value,
+        ).value(),
+        overall: formatToken(votingPowerOverall, chainConfig.votingPowerTokenUnit),
         height: R.pathOr(0, ['validatorVotingPowers', 0, 'height'], data.validator[0]),
       };
 

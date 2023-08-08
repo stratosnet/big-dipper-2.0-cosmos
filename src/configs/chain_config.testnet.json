@@ -14,12 +14,25 @@
     "time": "2022-06-20T13:38:18",
     "height": 1
   },
-  "primaryTokenUnit": "ustos",
-  "votingPowerTokenUnit": "ustos",
+  "primaryTokenUnit": "wei",
+  "votingPowerTokenUnit": "vp",
+  "powerReduction":1000000,
   "tokenUnits": {
-    "udaric": {
-      "display": "ustos",
+    "wei": {
+      "display": "STOS",
+      "exponent": 18
+    },
+    "gwei": {
+      "display": "STOS",
       "exponent": 9
+    },
+    "utros": {
+      "display": "TROS",
+      "exponent": 9
+    },
+    "vp": {
+      "display": "VP",
+      "exponent": 15
     }
   },
   "extra": {
