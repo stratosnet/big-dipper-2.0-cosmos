@@ -82,7 +82,10 @@ type TagTheme = 'zero' |
 'seventeen' |
 'eighteen' |
 'nineteen' |
-'twenty'
+'twenty' |
+'pot' |
+'register' |
+'sds'
 
 type MsgCoin = {
   denom: string;

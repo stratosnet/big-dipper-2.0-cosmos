@@ -68,6 +68,23 @@ import GrantAllowance from './feegrant/grant_allowance';
 import RevokeAllowance from './feegrant/revoke_allowance';
 import CreateVestingAccount from './vesting/create_vesting_account';
 import CreatePeriodicVestingAccount from './vesting/create_periodic_vesting_account';
+import FoundationDeposit from './pot/foundation_deposit';
+import SlashingResourceNode from './pot/slashing_resource_node';
+import VolumeReport from './pot/volume_report';
+import Withdraw from './pot/withdraw';
+import CreateMetaNode from './register/create_meta_node';
+import CreateResourceNode from './register/create_resource_node';
+import MetaNodeRegistrationVote from './register/meta_node_registration_vote';
+import RemoveMetaNode from './register/remove_meta_node';
+import RemoveResourceNode from './register/remove_resource_node';
+import UpdateEffectiveDeposit from './register/update_effective_deposit';
+import UpdateMetaNode from './register/update_meta_node';
+import UpdateMetaNodeDeposit from './register/update_meta_node_deposit';
+import UpdateResourceNode from './register/update_resource_node';
+import UpdateResourceNodeDeposit from './register/update_resource_node_deposit';
+import FileUpload from './sds/file_upload';
+import Prepay from './sds/prepay';
+import EthereumTx from './evm/ethereum_tx';
 
 export {
   getMessageModelByType,
@@ -134,4 +151,21 @@ export {
   RevokeAllowance,
   CreateVestingAccount,
   CreatePeriodicVestingAccount,
+  FoundationDeposit,
+  SlashingResourceNode,
+  VolumeReport,
+  Withdraw,
+  CreateMetaNode,
+  CreateResourceNode,
+  MetaNodeRegistrationVote,
+  RemoveMetaNode,
+  RemoveResourceNode,
+  UpdateEffectiveDeposit,
+  UpdateMetaNode,
+  UpdateMetaNodeDeposit,
+  UpdateResourceNode,
+  UpdateResourceNodeDeposit,
+  FileUpload,
+  Prepay,
+  EthereumTx,
 };

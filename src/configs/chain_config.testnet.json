@@ -1,6 +1,6 @@
 {
-	"title": "Stratos Block Explorer",
-  "network": "testchain_1-1",
+  "title": "Stratos Block Explorer",
+  "network": "mesos-1",
   "icon": "https://raw.githubusercontent.com/stratosnet/big-dipper-2.0-cosmos/base-v2.1.0-stratos/assets/icon.svg?sanitize=true",
   "logo": {
     "default": "https://raw.githubusercontent.com/stratosnet/big-dipper-2.0-cosmos/base-v2.1.0-stratos/assets/logo.svg?sanitize=true"
@@ -37,5 +37,11 @@
   },
   "extra": {
     "profile": true
+  },
+  "evm": {
+    "chainId": 2047
+  },
+  "externalExplorers": {
+    "blockscout": "https://web3-explorer-mesos.thestratos.org"
   }
 }
