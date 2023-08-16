@@ -498,12 +498,6 @@ const getDataByType = (type: string) => {
       tagTheme: 'sds',
       tagDisplay: 'txSdsTxLabel',
     },
-    '/stratos.evm.v1.MsgEthereumTx': {
-      model: MODELS.MsgEthereumTx,
-      content: COMPONENTS.EthereumTx,
-      tagTheme: 'evm',
-      tagDisplay: 'txEthereumTxLabel',
-    },
   };
 
   if (defaultTypeToModel[type]) return defaultTypeToModel[type];
@@ -528,7 +522,7 @@ export const getMessageModelByType = (type: string) => {
  * Helper function to correctly display the correct UI
  * @param type Model type
  */
-export const getMessageByType = (message: any, viewRaw: boolean, t: any) => {
+export const getMessageByType = (message: any, viewRaw: boolean, t:any) => {
   const { type } = message;
   let results: {
     content: any;
