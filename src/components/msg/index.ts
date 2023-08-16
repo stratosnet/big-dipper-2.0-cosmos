@@ -84,7 +84,6 @@ import UpdateResourceNode from './register/update_resource_node';
 import UpdateResourceNodeDeposit from './register/update_resource_node_deposit';
 import FileUpload from './sds/file_upload';
 import Prepay from './sds/prepay';
-import EthereumTx from './evm/ethereum_tx';
 
 export {
   getMessageModelByType,
@@ -167,5 +166,4 @@ export {
   UpdateResourceNodeDeposit,
   FileUpload,
   Prepay,
-  EthereumTx,
 };

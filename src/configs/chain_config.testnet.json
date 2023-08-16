@@ -1,6 +1,6 @@
 {
-  "title": "Stratos Block Explorer",
-  "network": "mesos-1",
+	"title": "Stratos Block Explorer",
+  "network": "testchain_1-1",
   "icon": "https://raw.githubusercontent.com/stratosnet/big-dipper-2.0-cosmos/base-v2.1.0-stratos/assets/icon.svg?sanitize=true",
   "logo": {
     "default": "https://raw.githubusercontent.com/stratosnet/big-dipper-2.0-cosmos/base-v2.1.0-stratos/assets/logo.svg?sanitize=true"
@@ -14,25 +14,15 @@
     "time": "2022-06-20T13:38:18",
     "height": 1
   },
-  "primaryTokenUnit": "wei",
-  "votingPowerTokenUnit": "vp",
+  "primaryTokenUnit": "ustos",
+  "votingPowerTokenUnit": "ustos",
   "tokenUnits": {
-    "wei": {
-      "display": "stos",
-      "exponent": 18
-    },
-    "vp": {
-      "display": "VP",
-      "exponent": 6
+    "udaric": {
+      "display": "ustos",
+      "exponent": 9
     }
   },
   "extra": {
     "profile": true
-  },
-  "evm": {
-    "chainId": 2047
-  },
-  "externalExplorers": {
-    "blockscout": "https://web3-explorer-mesos.thestratos.org"
   }
 }

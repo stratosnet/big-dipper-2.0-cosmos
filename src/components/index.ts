@@ -29,7 +29,6 @@ import LoadAndExist from './load_and_exist';
 import DesmosProfile from './desmos_profile';
 import TransactionListDetails from './transactions_list_details';
 import AvatarNameListMsg from './avatar_name_list_msg';
-import ExtLink from './ext_link';
 
 export {
   Layout,
@@ -63,5 +62,4 @@ export {
   DesmosProfile,
   TransactionListDetails,
   AvatarNameListMsg,
-  ExtLink,
 };
