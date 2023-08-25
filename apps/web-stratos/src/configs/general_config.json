@@ -1,0 +1,10 @@
+{
+  "maintainer": {
+    "name": "Stratos",
+    "url": "https://www.thestratos.org"
+  },
+  "github": {
+    "reportIssue": "https://github.com/stratosnet/stratos-chain/issues"
+  },
+  "version": "v3.0.0"
+}

@@ -1,6 +1,6 @@
 {
-  "chainName": "base",
-  "title": "Desmos Block Explorer",
+  "chainName": "stratos-chain",
+  "title": "Stratos Block Explorer",
   "extra": {
     "profile": true,
     "graphqlWs": false
@@ -208,29 +208,33 @@
   "keplr": "{\"chainId\":\"desmos-mainnet\",\"chainName\":\"Desmos\",\"chainSymbolImageUrl\":\"https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/desmos-mainnet/chain.png\",\"rpc\":\"https://rpc.mainnet.desmos.network\",\"rest\":\"https://api.mainnet.desmos.network\",\"nodeProvider\":{\"name\":\"Forbole\",\"email\":\"info@forbole.com\",\"website\":\"https://www.forbole.com\"},\"bip44\":{\"coinType\":852},\"bech32Config\":{\"bech32PrefixAccAddr\":\"desmos\",\"bech32PrefixAccPub\":\"desmospub\",\"bech32PrefixValAddr\":\"desmosvaloper\",\"bech32PrefixValPub\":\"desmosvaloperpub\",\"bech32PrefixConsAddr\":\"desmosvalcons\",\"bech32PrefixConsPub\":\"desmosvalconspub\"},\"currencies\":[{\"coinDenom\":\"DSM\",\"coinMinimalDenom\":\"udsm\",\"coinDecimals\":6,\"coinGeckoId\":\"desmos\"}],\"feeCurrencies\":[{\"coinDenom\":\"DSM\",\"coinMinimalDenom\":\"udsm\",\"coinDecimals\":6,\"coinGeckoId\":\"desmos\",\"gasPriceStep\":{\"low\":0.01,\"average\":0.03,\"high\":0.05}}],\"stakeCurrency\":{\"coinDenom\":\"DSM\",\"coinMinimalDenom\":\"udsm\",\"coinDecimals\":6,\"coinGeckoId\":\"desmos\"},\"features\":[]}",
   "chains": [
     {
-      "network": "desmos-mainnet",
-      "chainType": "Mainnet",
+      "network": "dev-0",
+      "chainType": "Testnet",
       "genesis": {
-        "time": "2021-08-31T16:15:00",
+        "time": "2023-08-21T13:04:12Z",
         "height": 1
       },
       "prefix": {
-        "consensus": "desmosvalcons",
-        "validator": "desmosvaloper",
-        "account": "desmos"
+        "consensus": "stvalcons",
+        "validator": "stvaloper",
+        "account": "st"
       },
-      "primaryTokenUnit": "udsm",
-      "votingPowerTokenUnit": "udsm",
+      "primaryTokenUnit": "wei",
+      "votingPowerTokenUnit": "wei",
       "tokenUnits": {
-        "udsm": {
-          "display": "dsm",
-          "exponent": 6
+        "wei": {
+          "display": "STOS",
+          "exponent": 18
+        },
+        "gwei": {
+          "display": "STOS",
+          "exponent": 9
         }
       },
       "endpoints": {
-        "graphql": "https://gql.desmos.forbole.com/v1/graphql",
-        "graphqlWebsocket": "wss://gql.desmos.forbole.com/v1/graphql",
-        "publicRpcWebsocket": "wss://rpc.desmos.forbole.com/websocket"
+        "graphql": "https://hasura-dev.thestratos.org/v1/graphql",
+        "graphqlWebsocket": "wss://hasura-dev.thestratos.org/v1/graphql",
+        "publicRpcWebsocket": "wss://rpc-dev.thestratos.org/websocket"
       },
       "marketing": {
         "matomoURL": "https://analytics.bigdipper.live",
@@ -238,29 +242,33 @@
       }
     },
     {
-      "network": "morpheus-apollo-3",
+      "network": "mesos-0",
       "chainType": "Testnet",
       "genesis": {
-        "time": "2022-10-24T08:00:00",
-        "height": 7942286
+        "time": "2023-07-17T13:36:05Z",
+        "height": 0
       },
       "prefix": {
-        "consensus": "desmosvalcons",
-        "validator": "desmosvaloper",
-        "account": "desmos"
+        "consensus": "stvalcons",
+        "validator": "stvaloper",
+        "account": "st"
       },
-      "primaryTokenUnit": "udaric",
-      "votingPowerTokenUnit": "udaric",
+      "primaryTokenUnit": "wei",
+      "votingPowerTokenUnit": "wei",
       "tokenUnits": {
-        "udaric": {
-          "display": "daric",
-          "exponent": 6
+        "wei": {
+          "display": "STOS",
+          "exponent": 18
+        },
+        "gwei": {
+          "display": "STOS",
+          "exponent": 9
         }
       },
       "endpoints": {
-        "graphql": "https://gql-morpheus.desmos.forbole.com/v1/graphql",
-        "graphqlWebsocket": "wss://gql-morpheus.desmos.forbole.com/v1/graphql",
-        "publicRpcWebsocket": "wss://rpc-morpheus.desmos.forbole.com/websocket"
+        "graphql": "https://hasura-mesos.thestratos.org/v1/graphql",
+        "graphqlWebsocket": "wss://hasura-mesos.thestratos.org/v1/graphql",
+        "publicRpcWebsocket": "wss://rpc-mesos.thestratos.org/websocket"
       },
       "marketing": {
         "matomoURL": "https://analytics.bigdipper.live",
