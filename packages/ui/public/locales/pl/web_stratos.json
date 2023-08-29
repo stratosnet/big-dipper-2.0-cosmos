@@ -1,0 +1,21 @@
+{
+    "message_contents.txFoundationDepositContent": "<0>{{user}}</0> deposited <1>{{amount}}</1> to foundation account",
+    "message_contents.txSlashingResourceNodeContent": "<0>{{user}}</0> slashed <1>{{networkAddress}}</1> by <2>{{amount}}</2>",
+    "message_contents.txVolumeReportContent": "<0>{{user}}</0> sent volume report <1>{{reportReference}}</1>",
+    "message_contents.txWithdrawContent": "<0>{{from}}</0> withdrew <2>{{amount}}</2> reward to <1>{{user}}</1>",
+    "message_contents.txCreateMetaNodeContent": "<0>{{user}}</0> created meta node <1>{{networkAddress}}</1>",
+    "message_contents.txCreateResourceNodeContent": "<0>{{user}}</0> created resource node <1>{{networkAddress}}</1>",
+    "message_contents.txMetaNodeRegistrationVoteContent": "<0>{{user}}</0> voted to meta node <1>{{candidateNetworkAddress}}</1> registration",
+    "message_contents.txRemoveMetaNodeContent": "<0>{{user}}</0> removed meta node <1>{{metaNodeAddress}}</1>",
+    "message_contents.txRemoveResourceNodeContent": "<0>{{user}}</0> removed resource node <1>{{resourceNodeAddress}}</1>",
+    "message_contents.txUpdateEffectiveDepositContent": "resource node <0>{{networkAddress}}</0> updated effective deposit to <1>{{effectiveTokens}}</1>",
+    "message_contents.txUpdateMetaNodeContent": "<0>{{user}}</0> updated meta node <1>{{networkAddress}}</1>",
+    "message_contents.txUpdateMetaNodeDepositContent": "<0>{{user}}</0> deposit <1>{{depositDelta}}</1> to meta node <2>{{networkAddress}}</2>",
+    "message_contents.txUpdateResourceNodeContent": "<0>{{user}}</0> updated resource node <1>{{networkAddress}}</1>",
+    "message_contents.txUpdateResourceNodeDepositContent": "<0>{{user}}</0> deposit <1>{{depositDelta}}</1> to resource node <2>{{networkAddress}}</2>",
+    "message_contents.txFileUploadContent": "<0>{{from}}</0> reported file <2>{{fileHash}}</2> is uploaded by <1>{{user}}</1>",
+    "message_contents.txPrepayContent": "<0>{{sender}}</0> prepayed <2>{{amount}}</2> for <1>{{user}}</1>",
+    "message_labels.txPotTxLabel": "POT Transaction",
+    "message_labels.txRegisterTxLabel": "Register Transaction",
+    "message_labels.txSdsTxLabel": "SDS Transaction"
+}

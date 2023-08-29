@@ -1,11 +1,12 @@
 import numeral from 'numeral';
+import Big from 'big.js';
 import * as R from 'ramda';
 import { useCallback, useState } from 'react';
 import chainConfig from '@/chainConfig';
 import { OnlineVotingPowerQuery, useOnlineVotingPowerQuery } from '@/graphql/types/general_types';
 import { formatToken } from '@/utils/format_token';
 
-const { votingPowerTokenUnit } = chainConfig();
+const { extra, votingPowerTokenUnit } = chainConfig();
 
 type OnlineVotingPowerState = {
   votingPower: number;
@@ -20,13 +21,19 @@ const initialState: OnlineVotingPowerState = {
 };
 
 const formatOnlineVotingPower = (data: OnlineVotingPowerQuery) => {
-  const votingPower = data?.validatorVotingPowerAggregate?.aggregate?.sum?.votingPower ?? 0;
+  const votingPowerReducted = data?.validatorVotingPowerAggregate?.aggregate?.sum?.votingPower ?? 0;
   const bonded = data?.stakingPool?.[0]?.bonded ?? 0;
   const activeValidators = data?.activeTotal?.aggregate?.count ?? 0;
+  const votingPower = Big(votingPowerReducted)
+    .mul(10 ** (extra.votingPowerExponent ?? 0))
+    .toNumber();
+  const formattedVotingPower = numeral(
+    formatToken(votingPower, votingPowerTokenUnit).value
+  ).value();
 
   return {
     activeValidators,
-    votingPower,
+    formattedVotingPower,
     totalVotingPower: numeral(formatToken(bonded, votingPowerTokenUnit).value).value() ?? 0,
   };
 };
