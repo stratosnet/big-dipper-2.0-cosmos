@@ -221,7 +221,7 @@
         "account": "st"
       },
       "primaryTokenUnit": "wei",
-      "votingPowerTokenUnit": "wei",
+      "votingPowerTokenUnit": "vp",
       "tokenUnits": {
         "wei": {
           "display": "STOS",
@@ -230,6 +230,10 @@
         "gwei": {
           "display": "STOS",
           "exponent": 9
+        },
+        "vp": {
+          "display": "VP",
+          "exponent": 15
         }
       },
       "endpoints": {
