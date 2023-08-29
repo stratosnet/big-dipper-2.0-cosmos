@@ -282,6 +282,10 @@ const ChainIcon = ({
       [iconDark, iconLight] =
         type === 'icon' ? [jackalIconBoth, jackalIconBoth] : [jackalLogoDark, jackalLogoLight];
       break;
+    case 'stratos':
+      [iconDark, iconLight] =
+        type === 'icon' ? [cosmosIconLight, cosmosIconLight] : [cosmosLogoDark, cosmosLogoLight];
+      break;
     default:
       throw new Error(`chain ${chainName} not supported`);
   }
