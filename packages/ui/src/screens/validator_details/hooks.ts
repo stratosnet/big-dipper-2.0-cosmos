@@ -1,4 +1,6 @@
 import { useRouter } from 'next/router';
+import numeral from 'numeral';
+import Big from 'big.js';
 import * as R from 'ramda';
 import { useCallback, useEffect, useState } from 'react';
 import chainConfig from '@/chainConfig';
@@ -90,12 +92,15 @@ const formatStatus = (data: ValidatorDetailsQuery) => {
 // votingPower
 // ============================
 const formatVotingPower = (data: ValidatorDetailsQuery) => {
-  const selfVotingPower =
-    (data.validator[0]?.validatorVotingPowers?.[0]?.votingPower ?? 0) /
-    10 ** (extra.votingPowerExponent ?? 0);
+  const selfVotingPowerReducted = data?.validator[0]?.validatorVotingPowers?.[0]?.votingPower ?? 0;
+  const selfVotingPower = Big(selfVotingPowerReducted)
+    .mul(10 ** (extra.votingPowerExponent ?? 0))
+    .toNumber();
+  const formattedSelfVotingPower =
+    numeral(formatToken(selfVotingPower, votingPowerTokenUnit).value).value() ?? 0;
 
   const votingPower = {
-    self: selfVotingPower,
+    self: formattedSelfVotingPower,
     overall: formatToken(data?.stakingPool?.[0]?.bonded ?? 0, votingPowerTokenUnit),
     height: data.validator[0]?.validatorVotingPowers?.[0]?.height ?? 0,
   };

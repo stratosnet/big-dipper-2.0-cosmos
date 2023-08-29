@@ -30,8 +30,17 @@ const formatValidators = (data: ValidatorsQuery): Partial<ValidatorsState> => {
   let formattedItems: ValidatorType[] = data.validator
     .filter((x) => x.validatorInfo)
     .map((x) => {
+      const votingPowerReducted = x?.validatorVotingPowers?.[0]?.votingPower ?? 0;
       const votingPower =
-        (x?.validatorVotingPowers?.[0]?.votingPower ?? 0) / 10 ** (extra.votingPowerExponent ?? 0);
+        numeral(
+          formatToken(
+            Big(votingPowerReducted)
+              .mul(10 ** (extra.votingPowerExponent ?? 0))
+              .toNumber(),
+            votingPowerTokenUnit
+          ).value
+        ).value() ?? 0;
+
       const votingPowerPercent = votingPowerOverall
         ? numeral((votingPower / votingPowerOverall) * 100).value()
         : 0;
