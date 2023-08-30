@@ -27,13 +27,11 @@ const formatOnlineVotingPower = (data: OnlineVotingPowerQuery) => {
   const votingPower = Big(votingPowerReducted)
     .mul(10 ** (extra.votingPowerExponent ?? 0))
     .toNumber();
-  const formattedVotingPower = numeral(
-    formatToken(votingPower, votingPowerTokenUnit).value
-  ).value();
-
+  const formattedVotingPower =
+    numeral(formatToken(votingPower, votingPowerTokenUnit).value).value() ?? 0;
   return {
     activeValidators,
-    formattedVotingPower,
+    votingPower: formattedVotingPower,
     totalVotingPower: numeral(formatToken(bonded, votingPowerTokenUnit).value).value() ?? 0,
   };
 };
