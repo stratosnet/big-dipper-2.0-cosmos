@@ -43,6 +43,7 @@ import humansaiIconDark from 'shared-utils/assets/icons/humansai-both.svg?url';
 import gitopiaIconDark from 'shared-utils/assets/icons/gitopia-both.svg?url';
 import jackalIconBoth from 'shared-utils/assets/icons/jackal-both.svg?url';
 import archwayIconBoth from 'shared-utils/assets/icons/archway-both.svg?url';
+import stratosIconBoth from 'shared-utils/assets/icons/stratos-both.svg?url';
 import agoricLogoLight from 'shared-utils/assets/logos/agoric-light.png';
 import akashLogoDark from 'shared-utils/assets/logos/akash-dark.svg?url';
 import assetmantleLogoDark from 'shared-utils/assets/logos/assetmantle-dark.svg?url';
@@ -91,6 +92,8 @@ import jackalLogoDark from 'shared-utils/assets/logos/jackal-dark.svg?url';
 import jackalLogoLight from 'shared-utils/assets/logos/jackal-light.svg?url';
 import archwayLogoDark from 'shared-utils/assets/logos/archway-dark.svg?url';
 import archwayLogoLight from 'shared-utils/assets/logos/archway-light.svg?url';
+import stratosLogoDark from 'shared-utils/assets/logos/stratos-dark.svg?url';
+import stratosLogoLight from 'shared-utils/assets/logos/stratos-light.svg?url';
 
 interface IconProps extends Omit<ImageProps, 'id' | 'src'> {
   type: 'icon' | 'logo';
@@ -290,7 +293,7 @@ const ChainIcon = ({
         type === 'icon' ? [archwayIconBoth, archwayIconBoth] : [archwayLogoDark, archwayLogoLight];
     case 'stratos':
       [iconDark, iconLight] =
-        type === 'icon' ? [cosmosIconLight, cosmosIconLight] : [cosmosLogoDark, cosmosLogoLight];
+        type === 'icon' ? [stratosIconBoth, stratosIconBoth] : [stratosLogoDark, stratosLogoLight];
       break;
     default:
       throw new Error(`chain ${chainName} not supported`);
