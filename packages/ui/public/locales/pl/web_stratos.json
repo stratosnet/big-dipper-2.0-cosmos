@@ -15,7 +15,20 @@
     "message_contents.txUpdateResourceNodeDepositContent": "<0>{{user}}</0> deposit <1>{{depositDelta}}</1> to resource node <2>{{networkAddress}}</2>",
     "message_contents.txFileUploadContent": "<0>{{from}}</0> reported file <2>{{fileHash}}</2> is uploaded by <1>{{user}}</1>",
     "message_contents.txPrepayContent": "<0>{{sender}}</0> prepayed <2>{{amount}}</2> for <1>{{user}}</1>",
-    "message_labels.txPotTxLabel": "POT Transaction",
-    "message_labels.txRegisterTxLabel": "Register Transaction",
-    "message_labels.txSdsTxLabel": "SDS Transaction"
+    "message_labels.txFoundationDepositLabel": "Foundation Deposit",
+    "message_labels.txSlashingResourceNodeLabel": "Slashing Resource Node",
+    "message_labels.txVolumeReportLabel": "Volume Report",
+    "message_labels.txWithdrawLabel": "POT Withdraw",
+    "message_labels.txCreateMetaNodeLabel": "Create Meta Node",
+    "message_labels.txCreateResourceNodeLabel": "Create Resource Node",
+    "message_labels.txMetaNodeRegistrationVoteLabel": "Meta Node Reg Vote",
+    "message_labels.txRemoveMetaNodeLabel": "Remove Meta Node",
+    "message_labels.txRemoveResourceNodeLabel": "Remove Resource Node",
+    "message_labels.txUpdateEffectiveDepositLabel": "Update Effective Deposit",
+    "message_labels.txUpdateMetaNodeLabel": "Update Meta Node",
+    "message_labels.txUpdateMetaNodeDepositLabel": "Update Meta Node Deposit",
+    "message_labels.txUpdateResourceNodeLabel": "Update Resource Node",
+    "message_labels.txUpdateResourceNodeDepositLabel": "Update Resource Node Deposit",
+    "message_labels.txFileUploadLabel": "File Upload",
+    "message_labels.txPrepayLabel": "Prepay"
 }
