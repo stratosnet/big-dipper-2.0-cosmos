@@ -1,8 +1,11 @@
+import * as R from 'ramda';
 import type { Categories } from '@/models/msg/types';
 
 class MsgUpdateMetaNode {
   public category: Categories;
+
   public type: string;
+
   public description: {
     moniker: string;
     identity: string;
@@ -10,33 +13,41 @@ class MsgUpdateMetaNode {
     securityContact: string;
     details: string;
   };
-  public networkAddress: string;
-  public ownerAddress: string;
-  public json: any;
 
-  constructor(payload: any) {
+  public networkAddress: string;
+
+  public ownerAddress: string;
+
+  public json: object;
+
+  constructor(payload: object) {
     this.category = 'register';
-    this.type = payload.type;
-    this.description = payload.description;
-    this.networkAddress = payload.networkAddress;
-    this.ownerAddress = payload.ownerAddress;
-    this.json = payload.json;
+    this.type = R.pathOr('', ['type'], payload);
+    this.description = R.pathOr(
+      { moniker: '', identity: '', website: '', securityContact: '', details: '' },
+      ['description'],
+      payload
+    );
+    this.networkAddress = R.pathOr('', ['networkAddress'], payload);
+    this.ownerAddress = R.pathOr('', ['ownerAddress'], payload);
+    this.json = R.pathOr({}, ['json'], payload);
   }
 
-  static fromJson(json: any) {
-    return new MsgUpdateMetaNode({
+  static fromJson(json: object): MsgUpdateMetaNode {
+    return {
+      category: 'register',
       json,
-      type: json['@type'],
+      type: R.pathOr('', ['@type'], json),
       description: {
-        moniker: json?.description?.moniker,
-        identity: json?.description?.identity,
-        website: json?.description?.website,
-        securityContact: json?.description?.security_contact,
-        details: json?.description?.details,
+        moniker: R.pathOr('', ['description', 'moniker'], json),
+        identity: R.pathOr('', ['description', 'identity'], json),
+        website: R.pathOr('', ['description', 'website'], json),
+        securityContact: R.pathOr('', ['description', 'security_contact'], json),
+        details: R.pathOr('', ['description', 'details'], json),
       },
-      networkAddress: json?.network_address,
-      ownerAddress: json?.owner_address,
-    });
+      networkAddress: R.pathOr('', ['network_address'], json),
+      ownerAddress: R.pathOr('', ['owner_address'], json),
+    };
   }
 }
 

@@ -1,40 +1,58 @@
+import * as R from 'ramda';
 import numeral from 'numeral';
 import type { Categories } from '@/models/msg/types';
 
 class MsgSlashingResourceNode {
   public category: Categories;
-  public type: string;
-  public reporters: string[];
-  public reporterOwner: string[];
-  public networkAddress: string;
-  public walletAddress: string;
-  public slashing: string | number;
-  public suspend: boolean;
-  public json: any;
 
-  constructor(payload: any) {
+  public type: string;
+
+  public reporters: string[];
+
+  public reporterOwner: string[];
+
+  public networkAddress: string;
+
+  public walletAddress: string;
+
+  public slashing: string | number;
+
+  public suspend: boolean;
+
+  public json: object;
+
+  constructor(payload: object) {
     this.category = 'pot';
-    this.type = payload.type;
-    this.reporters = payload.reporters;
-    this.reporterOwner = payload.reporterOwner;
-    this.networkAddress = payload.networkAddress;
-    this.walletAddress = payload.walletAddress;
-    this.slashing = payload.slashing;
-    this.suspend = payload.suspend;
-    this.json = payload.json;
+    this.type = R.pathOr('', ['type'], payload);
+    this.reporters = R.pathOr<MsgSlashingResourceNode['reporters']>([], ['reporters'], payload);
+    this.reporterOwner = R.pathOr<MsgSlashingResourceNode['reporterOwner']>(
+      [],
+      ['reporterOwner'],
+      payload
+    );
+    this.networkAddress = R.pathOr('', ['networkAddress'], payload);
+    this.walletAddress = R.pathOr('', ['walletAddress'], payload);
+    this.slashing = R.pathOr('', ['slashing'], payload);
+    this.suspend = R.pathOr(false, ['suspend'], payload);
+    this.json = R.pathOr({}, ['json'], payload);
   }
 
-  static fromJson(json: any) {
-    return new MsgSlashingResourceNode({
+  static fromJson(json: object): MsgSlashingResourceNode {
+    return {
+      category: 'pot',
       json,
-      type: json['@type'],
-      reporters: json.reporters,
-      reporterOwner: json.reporter_owner,
-      networkAddress: json.network_address,
-      walletAddress: json.wallet_address,
-      slashing: numeral(json.slashing ?? 0).value(),
-      suspend: json.suspend,
-    });
+      type: R.pathOr('', ['@type'], json),
+      reporters: R.pathOr<MsgSlashingResourceNode['reporters']>([], ['reporters'], json),
+      reporterOwner: R.pathOr<MsgSlashingResourceNode['reporterOwner']>(
+        [],
+        ['reporter_owner'],
+        json
+      ),
+      networkAddress: R.pathOr('', ['network_address'], json),
+      walletAddress: R.pathOr('', ['wallet_address'], json),
+      slashing: numeral(R.pathOr('0', ['slashing'], json)).value() ?? '0',
+      suspend: R.pathOr(false, ['suspend'], json),
+    };
   }
 }
 
