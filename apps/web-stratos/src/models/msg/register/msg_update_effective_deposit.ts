@@ -1,34 +1,50 @@
+import * as R from 'ramda';
 import numeral from 'numeral';
 import type { Categories } from '@/models/msg/types';
 
 class MsgUpdateEffectiveDeposit {
   public category: Categories;
-  public type: string;
-  public reporters: string[];
-  public reporterOwner: string[];
-  public networkAddress: string;
-  public effectiveTokens: string | number;
-  public json: any;
 
-  constructor(payload: any) {
+  public type: string;
+
+  public reporters: string[];
+
+  public reporterOwner: string[];
+
+  public networkAddress: string;
+
+  public effectiveTokens: string | number;
+
+  public json: object;
+
+  constructor(payload: object) {
     this.category = 'register';
-    this.type = payload.type;
-    this.reporters = payload.reporters;
-    this.reporterOwner = payload.reporterOwner;
-    this.networkAddress = payload.networkAddress;
-    this.effectiveTokens = payload.effectiveTokens;
-    this.json = payload.json;
+    this.type = R.pathOr('', ['type'], payload);
+    this.reporters = R.pathOr<MsgUpdateEffectiveDeposit['reporters']>([], ['reporters'], payload);
+    this.reporterOwner = R.pathOr<MsgUpdateEffectiveDeposit['reporterOwner']>(
+      [],
+      ['reporterOwner'],
+      payload
+    );
+    this.networkAddress = R.pathOr('', ['networkAddress'], payload);
+    this.effectiveTokens = R.pathOr('', ['effectiveTokens'], payload);
+    this.json = R.pathOr({}, ['json'], payload);
   }
 
-  static fromJson(json: any) {
-    return new MsgUpdateEffectiveDeposit({
+  static fromJson(json: object): MsgUpdateEffectiveDeposit {
+    return {
+      category: 'register',
       json,
-      type: json['@type'],
-      reporters: json?.reporters,
-      reporterOwner: json?.reporter_owner,
-      networkAddress: json?.network_address,
-      effectiveTokens: numeral(json?.effective_tokens ?? 0).value(),
-    });
+      type: R.pathOr('', ['@type'], json),
+      reporters: R.pathOr<MsgUpdateEffectiveDeposit['reporters']>([], ['reporters'], json),
+      reporterOwner: R.pathOr<MsgUpdateEffectiveDeposit['reporterOwner']>(
+        [],
+        ['reporter_owner'],
+        json
+      ),
+      networkAddress: R.pathOr('', ['network_address'], json),
+      effectiveTokens: numeral(R.pathOr('0', ['effective_tokens'], json)).value() ?? '0',
+    };
   }
 }
 

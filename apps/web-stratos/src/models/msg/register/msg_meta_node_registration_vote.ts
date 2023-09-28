@@ -1,36 +1,45 @@
+import * as R from 'ramda';
 import type { Categories } from '@/models/msg/types';
 
 class MsgMetaNodeRegistrationVote {
   public category: Categories;
-  public type: string;
-  public candidateNetworkAddress: string;
-  public candidateOwnerAddress: string;
-  public opinion: boolean;
-  public voterNetworkAddress: string;
-  public voterOwnerAddress: string;
-  public json: any;
 
-  constructor(payload: any) {
+  public type: string;
+
+  public candidateNetworkAddress: string;
+
+  public candidateOwnerAddress: string;
+
+  public opinion: boolean;
+
+  public voterNetworkAddress: string;
+
+  public voterOwnerAddress: string;
+
+  public json: object;
+
+  constructor(payload: object) {
     this.category = 'register';
-    this.type = payload.type;
-    this.candidateNetworkAddress = payload.candidateNetworkAddress;
-    this.candidateOwnerAddress = payload.candidateOwnerAddress;
-    this.opinion = payload.opinion;
-    this.voterNetworkAddress = payload.voterNetworkAddress;
-    this.voterOwnerAddress = payload.voterOwnerAddress;
-    this.json = payload.json;
+    this.type = R.pathOr('', ['type'], payload);
+    this.candidateNetworkAddress = R.pathOr('', ['candidateNetworkAddress'], payload);
+    this.candidateOwnerAddress = R.pathOr('', ['candidateOwnerAddress'], payload);
+    this.opinion = R.pathOr(false, ['opinion'], payload);
+    this.voterNetworkAddress = R.pathOr('', ['voterNetworkAddress'], payload);
+    this.voterOwnerAddress = R.pathOr('', ['voterOwnerAddress'], payload);
+    this.json = R.pathOr({}, ['json'], payload);
   }
 
-  static fromJson(json: any) {
-    return new MsgMetaNodeRegistrationVote({
+  static fromJson(json: object): MsgMetaNodeRegistrationVote {
+    return {
+      category: 'register',
       json,
-      type: json['@type'],
-      candidateNetworkAddress: json?.candidate_network_address,
-      candidateOwnerAddress: json?.candidate_owner_address,
-      opinion: json?.opinion,
-      voterNetworkAddress: json?.voter_network_address,
-      voterOwnerAddress: json?.voter_owner_address,
-    });
+      type: R.pathOr('', ['@type'], json),
+      candidateNetworkAddress: R.pathOr('', ['candidate_network_address'], json),
+      candidateOwnerAddress: R.pathOr('', ['candidate_owner_address'], json),
+      opinion: R.pathOr(false, ['opinion'], json),
+      voterNetworkAddress: R.pathOr('', ['voter_network_address'], json),
+      voterOwnerAddress: R.pathOr('', ['voter_owner_address'], json),
+    };
   }
 }
 

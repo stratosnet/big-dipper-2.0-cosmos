@@ -3,14 +3,20 @@ import type { Categories } from '@/models/msg/types';
 
 class MsgCreateResourceNode {
   public category: Categories;
+
   public type: string;
+
   public networkAddress: string;
+
   public pubKey: {
     type: string;
     key: string;
   };
+
   public value: MsgCoin;
+
   public ownerAddress: string;
+
   public description: {
     moniker: string;
     identity: string;
@@ -18,43 +24,50 @@ class MsgCreateResourceNode {
     securityContact: string;
     details: string;
   };
-  public nodeType: number;
-  public json: any;
 
-  constructor(payload: any) {
+  public nodeType: number;
+
+  public json: object;
+
+  constructor(payload: object) {
     this.category = 'register';
-    this.type = payload.type;
-    this.networkAddress = payload.networkAddress;
-    this.pubKey = payload.pubKey;
-    this.value = payload.value;
-    this.ownerAddress = payload.ownerAddress;
-    this.description = payload.description;
-    this.nodeType = payload.nodeType;
-    this.json = payload.json;
+    this.type = R.pathOr('', ['type'], payload);
+    this.networkAddress = R.pathOr('', ['networkAddress'], payload);
+    this.pubKey = R.pathOr({ type: '', key: '' }, ['pubKey'], payload);
+    this.value = R.pathOr({ denom: '', amount: '0' }, ['value'], payload);
+    this.ownerAddress = R.pathOr('', ['ownerAddress'], payload);
+    this.description = R.pathOr(
+      { moniker: '', identity: '', website: '', securityContact: '', details: '' },
+      ['description'],
+      payload
+    );
+    this.nodeType = R.pathOr(0, ['nodeType'], payload);
+    this.json = R.pathOr({}, ['json'], payload);
   }
 
-  static fromJson(json: any) {
+  static fromJson(json: object) {
     return new MsgCreateResourceNode({
+      category: 'register',
       json,
-      type: json['@type'],
-      networkAddress: json?.network_address,
+      type: R.pathOr('', ['@type'], json),
+      networkAddress: R.pathOr('', ['network_address'], json),
       pubKey: {
-        type: json?.pubkey?.['@type'],
-        key: json?.pubkey?.key,
+        type: R.pathOr('', ['pubkey', '@type'], json),
+        key: R.pathOr('', ['pubkey', 'key'], json),
       },
       value: {
-        denom: json?.value?.denom,
+        denom: R.pathOr('', ['value', 'denom'], json),
         amount: R.pathOr('0', ['value', 'amount'], json),
       },
-      ownerAddress: json?.owner_address,
+      ownerAddress: R.pathOr('', ['owner_address'], json),
       description: {
-        moniker: json?.description?.moniker,
-        identity: json?.description?.identity,
-        website: json?.description?.website,
-        securityContact: json?.description?.security_contact,
-        details: json?.description?.details,
+        moniker: R.pathOr('', ['description', 'moniker'], json),
+        identity: R.pathOr('', ['description', 'identity'], json),
+        website: R.pathOr('', ['description', 'website'], json),
+        securityContact: R.pathOr('', ['description', 'security_contact'], json),
+        details: R.pathOr('', ['description', 'details'], json),
       },
-      nodeType: json?.node_type,
+      nodeType: R.pathOr(0, ['node_type'], json),
     });
   }
 }
