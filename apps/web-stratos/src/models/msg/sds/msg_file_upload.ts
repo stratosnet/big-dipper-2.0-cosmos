@@ -1,33 +1,41 @@
+import * as R from 'ramda';
 import type { Categories } from '@/models/msg/types';
 
 class MsgFileUpload {
   public category: Categories;
-  public type: string;
-  public fileHash: string;
-  public fromAddress: string;
-  public reporter: string;
-  public uploader: string;
-  public json: any;
 
-  constructor(payload: any) {
+  public type: string;
+
+  public fileHash: string;
+
+  public fromAddress: string;
+
+  public reporter: string;
+
+  public uploader: string;
+
+  public json: object;
+
+  constructor(payload: object) {
     this.category = 'sds';
-    this.type = payload.type;
-    this.fileHash = payload.fileHash;
-    this.fromAddress = payload.fromAddress;
-    this.reporter = payload.reporter;
-    this.uploader = payload.uploader;
-    this.json = payload.json;
+    this.type = R.pathOr('', ['type'], payload);
+    this.fileHash = R.pathOr('', ['fileHash'], payload);
+    this.fromAddress = R.pathOr('', ['fromAddress'], payload);
+    this.reporter = R.pathOr('', ['reporter'], payload);
+    this.uploader = R.pathOr('', ['uploader'], payload);
+    this.json = R.pathOr({}, ['json'], payload);
   }
 
-  static fromJson(json: any) {
-    return new MsgFileUpload({
+  static fromJson(json: object): MsgFileUpload {
+    return {
+      category: 'sds',
       json,
-      type: json['@type'],
-      fileHash: json?.file_hash,
-      fromAddress: json?.from,
-      reporter: json?.reporter,
-      uploader: json?.uploader,
-    });
+      type: R.pathOr('', ['@type'], json),
+      fileHash: R.pathOr('', ['file_hash'], json),
+      fromAddress: R.pathOr('', ['from'], json),
+      reporter: R.pathOr('', ['reporter'], json),
+      uploader: R.pathOr('', ['uploader'], json),
+    };
   }
 }
 

@@ -1,59 +1,10 @@
+import * as R from 'ramda';
 import numeral from 'numeral';
 import type { Categories } from '@/models/msg/types';
 
-class MsgVolumeReport {
-  public category: Categories;
-  public type: string;
-  public walletVolumes: SingleWalletVolume[];
-  public reporter: string[];
-  public epoch: string | number;
-  public reportReference: string;
-  public reporterOwner: string;
-  public blsSignature: BLSSignatureInfo;
-  public json: any;
-
-  constructor(payload: any) {
-    this.category = 'pot';
-    this.type = payload.type;
-    this.walletVolumes = payload.walletVolumes;
-    this.reporter = payload.reporter;
-    this.epoch = payload.epoch;
-    this.reportReference = payload.reportReference;
-    this.reporterOwner = payload.reporterOwner;
-    this.blsSignature = payload.blsSignature;
-    this.json = payload.json;
-  }
-
-  static fromJson(json: any) {
-    return new MsgVolumeReport({
-      json,
-      type: json['@type'],
-      walletVolumes: json?.wallet_volumes.map((x) => {
-        return {
-          walletAddress: x?.wallet_address,
-          volume: numeral(x?.volume ?? 0).value(),
-        };
-      }),
-      reporter: json?.reporter,
-      epoch: numeral(json?.epoch ?? 0).value(),
-      reportReference: json?.report_reference,
-      reporterOwner: json?.reporter_owner,
-      blsSignature: json?.bls_signature.map((x) => {
-        return {
-          pubKeys: x?.pub_keys,
-          signature: x?.signature,
-          txData: x?.tx_data,
-        };
-      }),
-    });
-  }
-}
-
-export default MsgVolumeReport;
-
 type SingleWalletVolume = {
   walletAddress: string;
-  volume: string | number;
+  volume: string;
 };
 
 type BLSSignatureInfo = {
@@ -61,3 +12,64 @@ type BLSSignatureInfo = {
   signature: string;
   txData: string;
 };
+
+class MsgVolumeReport {
+  public category: Categories;
+
+  public type: string;
+
+  public walletVolumes: SingleWalletVolume[];
+
+  public reporter: string;
+
+  public epoch: string | number;
+
+  public reportReference: string;
+
+  public reporterOwner: string;
+
+  public blsSignature: BLSSignatureInfo;
+
+  public json: object;
+
+  constructor(payload: object) {
+    this.category = 'pot';
+    this.type = R.pathOr('', ['type'], payload);
+    this.walletVolumes = R.pathOr<MsgVolumeReport['walletVolumes']>([], ['walletVolumes'], payload);
+    this.reporter = R.pathOr('', ['reporter'], payload);
+    this.epoch = R.pathOr('', ['epoch'], payload);
+    this.reportReference = R.pathOr('', ['reportReference'], payload);
+    this.reporterOwner = R.pathOr('', ['reporterOwner'], payload);
+    this.blsSignature = R.pathOr(
+      { pubKeys: [], signature: '', txData: '' },
+      ['blsSignature'],
+      payload
+    );
+    this.json = R.pathOr({}, ['json'], payload);
+  }
+
+  static fromJson(json: object): MsgVolumeReport {
+    return {
+      category: 'pot',
+      json,
+      type: R.pathOr('', ['@type'], json),
+      walletVolumes: R.pathOr([], ['wallet_volumes'], json).map(
+        (signleWalletVolume?: { walletAddress: string; volume: string }) => ({
+          walletAddress: signleWalletVolume?.walletAddress ?? '',
+          volume: signleWalletVolume?.volume ?? '',
+        })
+      ),
+      reporter: R.pathOr('', ['reporter'], json),
+      epoch: numeral(R.pathOr('0', ['epoch'], json)).value() ?? '0',
+      reportReference: R.pathOr('', ['report_reference'], json),
+      reporterOwner: R.pathOr('', ['reporter_owner'], json),
+      blsSignature: {
+        pubKeys: R.pathOr([], ['pub_keys'], json),
+        signature: R.pathOr('', ['signature'], json),
+        txData: R.pathOr('', ['tx_data'], json),
+      },
+    };
+  }
+}
+
+export default MsgVolumeReport;
