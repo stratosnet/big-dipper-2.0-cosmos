@@ -4,7 +4,7 @@
   "extra": {
     "profile": true,
     "graphqlWs": false,
-    "votingPowerExponent": 6
+    "votingPowerExponent": 12
   },
   "previewImage": "https://s3.bigdipper.live/desmos.png",
   "themes": {
