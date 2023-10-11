@@ -31,6 +31,7 @@
   "price": "Cena",
   "inflation": "Inflacja",
   "apr": "RRSO",
+  "miningReward": "Nagroda za wydobycie",
   "success": "Sukces",
   "fail": "Porażka",
   "filterBy": "Filtruj według...",

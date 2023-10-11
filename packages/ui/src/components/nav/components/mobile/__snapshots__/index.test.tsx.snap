@@ -338,7 +338,7 @@ exports[`screen: Nav/Mobile it renders 1`] = `
             loading="lazy"
             onError={[Function]}
             onLoad={[Function]}
-            src="https://raw.githubusercontent.com/forbole/big-dipper-networks/main/logos/desmos.svg?sanitize=true"
+            src="https://raw.githubusercontent.com/stratosnet/big-dipper-networks/main/logos/desmos.svg?sanitize=true"
             style={
               {
                 "color": "transparent",

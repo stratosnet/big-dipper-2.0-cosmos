@@ -6,9 +6,9 @@ const mockQueryResult = jest.fn().mockReturnValue({
     networks: [
       {
         name: 'Desmos',
-        logo: 'https://raw.githubusercontent.com/forbole/big-dipper-networks/main/logos/desmos.svg?sanitize=true',
+        logo: 'https://raw.githubusercontent.com/stratosnet/big-dipper-networks/main/logos/desmos.svg?sanitize=true',
         cover:
-          'https://raw.githubusercontent.com/forbole/big-dipper-networks/main/covers/desmos.png?sanitize=true',
+          'https://raw.githubusercontent.com/stratosnet/big-dipper-networks/main/covers/desmos.png?sanitize=true',
         links: [
           {
             name: 'Testnet',

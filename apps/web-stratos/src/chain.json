@@ -57,7 +57,9 @@
         "tokenomics": {
           "one": "#43A1BE",
           "two": "#E3BB55",
-          "three": "#20D292"
+          "three": "#20D292",
+          "four": "#2070D2",
+          "five": "#C220D2"
         },
         "condition": {
           "zero": "#E6E6E6",
@@ -152,7 +154,9 @@
         "tokenomics": {
           "one": "#2FB6E0",
           "two": "#FFC93D",
-          "three": "#20D494"
+          "three": "#20D494",
+          "four": "#2070D2",
+          "five": "#C220D2"
         },
         "condition": {
           "zero": "#E6E6E6",
