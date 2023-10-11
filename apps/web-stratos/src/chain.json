@@ -224,11 +224,11 @@
       "votingPowerTokenUnit": "vp",
       "tokenUnits": {
         "wei": {
-          "display": "STOS",
+          "display": "stos",
           "exponent": 18
         },
         "gwei": {
-          "display": "STOS",
+          "display": "stos",
           "exponent": 9
         },
         "vp": {
@@ -262,11 +262,11 @@
       "votingPowerTokenUnit": "wei",
       "tokenUnits": {
         "wei": {
-          "display": "STOS",
+          "display": "stos",
           "exponent": 18
         },
         "gwei": {
-          "display": "STOS",
+          "display": "stos",
           "exponent": 9
         }
       },
