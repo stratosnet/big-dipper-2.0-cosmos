@@ -29,6 +29,7 @@
   "price": "價格",
   "inflation": "通貨膨脹率",
   "apr": "年利率",
+  "miningReward": "挖礦獎勵",
   "success": "成功",
   "fail": "失敗",
   "filterBy": "過濾...",
