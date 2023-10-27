@@ -89,7 +89,10 @@ const Tokenomics: FC<ComponentDefault> = ({ className }) => {
         ))}
       </div>
       <div className={classes.content}>
-        <TokenomicChart data={data} />
+        <TokenomicChart
+          data={data.filter((x) => x.value !== 0)}
+          total={prettyFormat(tokenomics.total, 18, 0)}
+        />
       </div>
     </Box>
   );

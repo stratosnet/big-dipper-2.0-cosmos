@@ -7654,6 +7654,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/d3-time", "npm:3.0.0"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:4.0.6", {\
+          "packageLocation": "./.yarn/cache/@types-d3-scale-npm-4.0.6-94fcea076a-1c76c74b03.zip/node_modules/@types/d3-scale/",\
+          "packageDependencies": [\
+            ["@types/d3-scale", "npm:4.0.6"],\
+            ["@types/d3-time", "npm:3.0.0"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["@types/d3-shape", [\
@@ -21401,6 +21409,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@testing-library/react", "virtual:9dce388d82c018b4a7af5edc7243e51f7023d1ab93a923b3959d0066ac6881c93b965a0932486426cbefa96c9c8e47849d5ff541d2404b8aca246480fa32f0d2#npm:14.0.0"],\
             ["@types/big.js", "npm:6.1.6"],\
             ["@types/color", "npm:3.0.3"],\
+            ["@types/d3-scale", "npm:4.0.6"],\
             ["@types/eslint", "npm:8.37.0"],\
             ["@types/esprima", "npm:4.0.3"],\
             ["@types/jest", "npm:29.5.1"],\
@@ -21427,6 +21436,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["color", "npm:4.2.3"],\
             ["copy-to-clipboard", "npm:3.3.3"],\
             ["csstype", "npm:3.1.2"],\
+            ["d3-scale", "npm:4.0.2"],\
             ["dayjs", "npm:1.11.7"],\
             ["dotenv", "npm:16.0.3"],\
             ["eslint", "npm:8.40.0"],\
