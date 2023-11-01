@@ -5,4 +5,5 @@ export interface AtomState {
   inflation: number;
   communityPool: TokenUnit;
   apr: number;
+  miningReward: number | null;
 }
