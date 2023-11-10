@@ -69,12 +69,12 @@ import MsgGrantAllowance from './msg/feegrant/msg_grant_allowance';
 import MsgRevokeAllowance from './msg/feegrant/msg_revoke_allowance';
 import MsgCreateVestingAccount from './msg/vesting/msg_create_vesting_account';
 import MsgCreatePeriodicVestingAccount from './msg/vesting/msg_create_periodic_vesting_account';
-//pot
+// pot
 import MsgVolumeReport from './msg/pot/msg_volume_report';
 import MsgWithdraw from './msg/pot/msg_withdraw';
 import MsgFoundationDeposit from './msg/pot/msg_foundation_deposit';
 import MsgSlashingResourceNode from './msg/pot/msg_slashing_resource_node';
-//register
+// register
 import MsgCreateMetaNode from './msg/register/msg_create_meta_node';
 import MsgCreateResourceNode from './msg/register/msg_create_resource_node';
 import MsgMetaNodeRegistrationVote from './msg/register/msg_meta_node_registration_vote';
@@ -85,9 +85,11 @@ import MsgUpdateMetaNodeDeposit from './msg/register/msg_update_meta_node_deposi
 import MsgUpdateMetaNode from './msg/register/msg_update_meta_node';
 import MsgUpdateResourceNodeDeposit from './msg/register/msg_update_resource_node_deposit';
 import MsgUpdateResourceNode from './msg/register/msg_update_resource_node';
-//sds
+// sds
 import MsgFileUpload from './msg/sds/msg_file_upload';
 import MsgPrepay from './msg/sds/msg_prepay';
+// evm
+import MsgEthereumTx from './msg/evm/msg_ethereum_tx';
 
 export {
   BigDipperNetwork,
@@ -177,4 +179,5 @@ export {
   MsgUpdateResourceNode,
   MsgFileUpload,
   MsgPrepay,
+  MsgEthereumTx,
 };
