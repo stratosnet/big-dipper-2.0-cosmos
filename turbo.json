@@ -2,12 +2,16 @@
   "$schema": "https://turborepo.org/schema.json",
   "pipeline": {
     "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**"],
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/**",
+        ".next/**"
+      ],
       "env": [
         "NEXT_PUBLIC_BANNERS_JSON",
         "NEXT_PUBLIC_COINZILLA_ZONE",
-        "NEXT_PUBLIC_REST_CHAIN_ENDPOINT",
         "NEXT_PUBLIC_GRAPHQL_URL",
         "NEXT_PUBLIC_GRAPHQL_WS",
         "NEXT_PUBLIC_MATOMO_SITE_ID",
@@ -25,8 +29,12 @@
       "persistent": true
     },
     "start": {
-      "dependsOn": ["^build"],
-      "env": ["PORT"],
+      "dependsOn": [
+        "^build"
+      ],
+      "env": [
+        "PORT"
+      ],
       "outputs": [],
       "persistent": true
     },
@@ -34,13 +42,19 @@
       "outputs": []
     },
     "lint": {
-      "outputs": [".next/cache/eslint/**"]
+      "outputs": [
+        ".next/cache/eslint/**"
+      ]
     },
     "test": {
-      "outputs": ["coverage/**"]
+      "outputs": [
+        "coverage/**"
+      ]
     },
     "e2e": {
-      "env": ["PORT"],
+      "env": [
+        "PORT"
+      ],
       "outputs": []
     },
     "graphql:codegen": {
@@ -58,7 +72,6 @@
     "NEXT_PUBLIC_SENTRY_DSN",
     "NEXT_PUBLIC_RELEASE",
     "NEXT_PUBLIC_WC_BRIDGE_URL",
-    "NEXT_PUBLIC_REST_CHAIN_ENDPOINT",
     "NODE_ENV",
     "npm_package_version",
     "PORT",

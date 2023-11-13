@@ -15,6 +15,9 @@
   "message_contents.txUpdateResourceNodeDepositContent": "<0>{{user}}</0> deposit <1>{{depositDelta}}</1> to resource node <2>{{networkAddress}}</2>",
   "message_contents.txFileUploadContent": "<0>{{from}}</0> reported file <2>{{fileHash}}</2> is uploaded by <1>{{user}}</1>",
   "message_contents.txPrepayContent": "<0>{{sender}}</0> prepayed <2>{{amount}}</2> for <1>{{user}}</1>",
+  "message_contents.txEvmSendContent": "<0>{{user}}</0> sent <1>{{amount}}</1> to <2>{{address}}</2>",
+  "message_contents.txEvmExecuteContent": "<0>{{user}}</0> executed smart contract function on <2>{{address}}</2> with amount <1>{{amount}}</1>",
+  "message_contents.txEvmCreateContent": "<0>{{user}}</0> created smart contract on <2>{{address}}</2> with amount <1>{{amount}}</1>",
   "message_labels.txFoundationDepositLabel": "Foundation Deposit",
   "message_labels.txSlashingResourceNodeLabel": "Slashing Resource Node",
   "message_labels.txVolumeReportLabel": "Volume Report",
@@ -30,5 +33,6 @@
   "message_labels.txUpdateResourceNodeLabel": "Update Resource Node",
   "message_labels.txUpdateResourceNodeDepositLabel": "Update Resource Node Deposit",
   "message_labels.txFileUploadLabel": "File Upload",
-  "message_labels.txPrepayLabel": "Prepay"
+  "message_labels.txPrepayLabel": "Prepay",
+  "message_labels.txEthereumTxLabel": "EVM Transaction"
 }
