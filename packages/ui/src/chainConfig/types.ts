@@ -22,10 +22,17 @@ export interface ChainSettings {
     graphql?: string;
     graphqlWebsocket?: string;
     publicRpcWebsocket?: string;
+    rest?: string;
   };
   marketing: {
     matomoURL?: string;
     matomoSiteID?: string;
+  };
+  externalExplorers?: {
+    [name: string]: string;
+  };
+  evm?: {
+    chainId: number;
   };
 }
 
@@ -145,4 +152,10 @@ export interface ChainConfig extends ChainSettings {
     light: PaletteSettings;
   };
   keplr: string | undefined;
+  externalExplorers?: {
+    [name: string]: string;
+  };
+  evm?: {
+    chainId: number;
+  };
 }
