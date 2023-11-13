@@ -458,6 +458,15 @@ const customTypeToModel = {
     tagTheme: 'three',
     tagDisplay: 'txPrepayLabel',
   },
+  // ========================
+  // evm
+  // ========================
+  '/stratos.evm.v1.MsgEthereumTx': {
+    model: MODELS.MsgEthereumTx,
+    content: COMPONENTS.EthereumTx,
+    tagTheme: 'evm',
+    tagDisplay: 'txEthereumTxLabel',
+  },
 };
 type CustomTypeToModel = typeof customTypeToModel;
 

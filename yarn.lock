@@ -1889,6 +1889,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@cosmjs/encoding@npm:^0.31.0":
+  version: 0.31.3
+  resolution: "@cosmjs/encoding@npm:0.31.3"
+  dependencies:
+    base64-js: ^1.3.0
+    bech32: ^1.1.4
+    readonly-date: ^1.0.0
+  checksum: dadef0579828299be20a64edf820ac8770c0cc47a842594bc9b494f160a347b745941d795360755ccbe385b9d0912aa54753479d1a70ff762d2d334693952ff9
+  languageName: node
+  linkType: hard
+
 "@cosmjs/json-rpc@npm:^0.29.5":
   version: 0.29.5
   resolution: "@cosmjs/json-rpc@npm:0.29.5"
@@ -15952,7 +15963,7 @@ __metadata:
   resolution: "web-stratos@workspace:apps/web-stratos"
   dependencies:
     "@apollo/client": ^3.7.14
-    "@cosmjs/encoding": ^0.30.1
+    "@cosmjs/encoding": ^0.31.0
     "@cosmjs/launchpad": ^0.27.1
     "@cosmjs/stargate": ^0.29.5
     "@emotion/cache": ^11.11.0
@@ -15960,6 +15971,7 @@ __metadata:
     "@emotion/react": ^11.11.0
     "@emotion/server": ^11.11.0
     "@emotion/styled": ^11.11.0
+    "@ethersproject/address": ^5.7.0
     "@graphql-codegen/cli": ^3.3.1
     "@graphql-codegen/client-preset": ^3.0.1
     "@graphql-codegen/fragment-matcher": ^4.0.1

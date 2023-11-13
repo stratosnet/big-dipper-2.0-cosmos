@@ -213,8 +213,53 @@
   "keplr": "{\"chainId\":\"desmos-mainnet\",\"chainName\":\"Desmos\",\"chainSymbolImageUrl\":\"https://raw.githubusercontent.com/chainapsis/keplr-chain-registry/main/images/desmos-mainnet/chain.png\",\"rpc\":\"https://rpc.mainnet.desmos.network\",\"rest\":\"https://api.mainnet.desmos.network\",\"nodeProvider\":{\"name\":\"Forbole\",\"email\":\"info@forbole.com\",\"website\":\"https://www.forbole.com\"},\"bip44\":{\"coinType\":852},\"bech32Config\":{\"bech32PrefixAccAddr\":\"desmos\",\"bech32PrefixAccPub\":\"desmospub\",\"bech32PrefixValAddr\":\"desmosvaloper\",\"bech32PrefixValPub\":\"desmosvaloperpub\",\"bech32PrefixConsAddr\":\"desmosvalcons\",\"bech32PrefixConsPub\":\"desmosvalconspub\"},\"currencies\":[{\"coinDenom\":\"DSM\",\"coinMinimalDenom\":\"udsm\",\"coinDecimals\":6,\"coinGeckoId\":\"desmos\"}],\"feeCurrencies\":[{\"coinDenom\":\"DSM\",\"coinMinimalDenom\":\"udsm\",\"coinDecimals\":6,\"coinGeckoId\":\"desmos\",\"gasPriceStep\":{\"low\":0.01,\"average\":0.03,\"high\":0.05}}],\"stakeCurrency\":{\"coinDenom\":\"DSM\",\"coinMinimalDenom\":\"udsm\",\"coinDecimals\":6,\"coinGeckoId\":\"desmos\"},\"features\":[]}",
   "chains": [
     {
+      "network": "testchain",
+      "chainType": "Localnet",
+      "genesis": {
+        "time": "2023-08-21T13:04:12Z",
+        "height": 1
+      },
+      "prefix": {
+        "consensus": "stvalcons",
+        "validator": "stvaloper",
+        "account": "st"
+      },
+      "primaryTokenUnit": "wei",
+      "votingPowerTokenUnit": "vp",
+      "tokenUnits": {
+        "wei": {
+          "display": "stos",
+          "exponent": 18
+        },
+        "gwei": {
+          "display": "stos",
+          "exponent": 9
+        },
+        "vp": {
+          "display": "VP",
+          "exponent": 15
+        }
+      },
+      "endpoints": {
+        "graphql": "http://localhost:8080/v1/graphql",
+        "graphqlWebsocket": "ws://localhost:8080/v1/graphql",
+        "publicRpcWebsocket": "ws://localhost:26657/websocket",
+        "rest": "http://localhost:1317"
+      },
+      "marketing": {
+        "matomoURL": "https://analytics.bigdipper.live",
+        "matomoSiteID": "8"
+      },
+      "externalExplorers": {
+        "blockscout": "http://localhost:4000"
+      },
+      "evm": {
+        "chainId": 2048
+      }
+    },
+    {
       "network": "dev-0",
-      "chainType": "Testnet",
+      "chainType": "Devnet",
       "genesis": {
         "time": "2023-08-21T13:04:12Z",
         "height": 1
@@ -243,19 +288,24 @@
       "endpoints": {
         "graphql": "https://hasura-dev.thestratos.org/v1/graphql",
         "graphqlWebsocket": "wss://hasura-dev.thestratos.org/v1/graphql",
-        "publicRpcWebsocket": "wss://rpc-dev.thestratos.org/websocket"
+        "publicRpcWebsocket": "wss://rpc-dev.thestratos.org/websocket",
+        "rest": "https://rest-dev.thestratos.org"
       },
       "marketing": {
         "matomoURL": "https://analytics.bigdipper.live",
         "matomoSiteID": "8"
+      },
+      "externalExplorers": {},
+      "evm": {
+        "chainId": 2048
       }
     },
     {
-      "network": "mesos-0",
+      "network": "mesos-1",
       "chainType": "Testnet",
       "genesis": {
         "time": "2023-07-17T13:36:05Z",
-        "height": 0
+        "height": 1
       },
       "prefix": {
         "consensus": "stvalcons",
@@ -277,11 +327,59 @@
       "endpoints": {
         "graphql": "https://hasura-mesos.thestratos.org/v1/graphql",
         "graphqlWebsocket": "wss://hasura-mesos.thestratos.org/v1/graphql",
-        "publicRpcWebsocket": "wss://rpc-mesos.thestratos.org/websocket"
+        "publicRpcWebsocket": "wss://rpc-mesos.thestratos.org/websocket",
+        "rest": "https://rest-mesos.thestratos.org"
       },
       "marketing": {
         "matomoURL": "https://analytics.bigdipper.live",
         "matomoSiteID": "8"
+      },
+      "externalExplorers": {
+        "blockscout": "https://web3-explorer-mesos.thestratos.org"
+      },
+      "evm": {
+        "chainId": 2047
+      }
+    },
+    {
+      "network": "stratos-1",
+      "chainType": "Mainnet",
+      "genesis": {
+        "time": "2023-09-08T00:00:00Z",
+        "height": 1
+      },
+      "prefix": {
+        "consensus": "stvalcons",
+        "validator": "stvaloper",
+        "account": "st"
+      },
+      "primaryTokenUnit": "wei",
+      "votingPowerTokenUnit": "wei",
+      "tokenUnits": {
+        "wei": {
+          "display": "stos",
+          "exponent": 18
+        },
+        "gwei": {
+          "display": "stos",
+          "exponent": 9
+        }
+      },
+      "endpoints": {
+        "graphql": "https://hasura.thestratos.org/v1/graphql",
+        "graphqlWebsocket": "wss://hasura.thestratos.org/v1/graphql",
+        "publicRpcWebsocket": "wss://rpc.thestratos.org/websocket",
+        "rest": "https://rest.thestratos.org"
+      },
+      "marketing": {
+        "matomoURL": "https://analytics.bigdipper.live",
+        "matomoSiteID": "8"
+      },
+      "externalExplorers": {
+        "blockscout": "https://web3-explorer.thestratos.org"
+      },
+      "evm": {
+        "chainId": 2048
       }
     }
   ]

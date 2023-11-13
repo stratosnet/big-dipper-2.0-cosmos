@@ -1,6 +1,10 @@
 import axios from 'axios';
 
+import chainConfig from '@/chainConfig';
+
+const { endpoints } = chainConfig();
+
 export const getMetrics = async () => {
-  const result = await axios.get(`${process.env.NEXT_PUBLIC_REST_CHAIN_ENDPOINT}/pot/metrics`);
+  const result = await axios.get(`${endpoints.rest}/pot/metrics`);
   return result.data.result;
 };

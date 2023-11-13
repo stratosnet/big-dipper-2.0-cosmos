@@ -17,4 +17,5 @@ export { default as UpdateResourceNode } from '@/components/msg/register/update_
 export { default as UpdateResourceNodeDeposit } from '@/components/msg/register/update_resource_node_deposit';
 export { default as FileUpload } from '@/components/msg/sds/file_upload';
 export { default as Prepay } from '@/components/msg/sds/prepay';
+export { default as EthereumTx } from '@/components/msg/evm/ethereum_tx';
 export * from 'ui/components/msg';
