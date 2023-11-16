@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import numeral from 'numeral';
 import dynamic from 'next/dynamic';
 
 import chainConfig from '@/chainConfig';
