@@ -1,7 +1,5 @@
 import { useId, FC } from 'react';
 
-import { BigNumber } from 'ethers';
-
 import { Tooltip, BarChart, CartesianGrid, XAxis, YAxis, Bar } from 'recharts';
 
 interface ITokenomicChart {
