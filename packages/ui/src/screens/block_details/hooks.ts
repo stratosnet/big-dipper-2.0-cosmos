@@ -90,7 +90,7 @@ const formatSignatures = (data: BlockDetailsQuery) => {
 // ==========================
 const formatTransactions = (data: BlockDetailsQuery, stateChange: Partial<BlockDetailState>) => {
   const transactions = data.transaction.map((x) => {
-    const messages = convertMsgsToModels(x);
+    const messages = convertMsgsToModels(x, true);
     const msgType = messages.map((eachMsg) => {
       const eachMsgType = eachMsg?.type ?? 'none type';
       return eachMsgType ?? '';

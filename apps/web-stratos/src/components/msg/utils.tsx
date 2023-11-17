@@ -464,7 +464,7 @@ const customTypeToModel = {
   '/stratos.evm.v1.MsgEthereumTx': {
     model: MODELS.MsgEthereumTx,
     content: COMPONENTS.EthereumTx,
-    tagTheme: 'evm',
+    tagTheme: 'four',
     tagDisplay: 'txEthereumTxLabel',
   },
 };
@@ -542,7 +542,8 @@ export const convertMsgsToModels = (
       '@type': string;
     }>;
     logs?: Array<Log>;
-  } | null
+  } | null,
+  dynamicType?: boolean
 ) => {
   const messages =
     transaction?.messages?.map((msg: object, i: number) => {
@@ -554,6 +555,11 @@ export const convertMsgsToModels = (
       if (model === MODELS.MsgWithdrawValidatorCommission) {
         const log = transaction?.logs?.[i];
         return MODELS.MsgWithdrawValidatorCommission.fromJson(msg, log);
+      }
+      if (dynamicType) {
+        if (model === MODELS.MsgEthereumTx) {
+          return model.fromJson(msg, '/stratos.evm.v1.MsgEvmTx');
+        }
       }
       return model.fromJson(msg);
     }) ?? [];
