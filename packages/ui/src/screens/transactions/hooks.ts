@@ -27,10 +27,10 @@ const formatTransactions = (data: TransactionsListenerSubscription): Transaction
   }
 
   return formattedData.map((x) => {
-    const messages = convertMsgsToModels(x);
+    const messages = convertMsgsToModels(x, true);
     const msgType =
-      x.messages?.map((eachMsg: unknown) => {
-        const eachMsgType = R.pathOr('none type', ['@type'], eachMsg);
+      messages?.map((eachMsg: unknown) => {
+        const eachMsgType = R.pathOr('none type', ['type'], eachMsg);
         return eachMsgType ?? '';
       }) ?? [];
     const convertedMsgType = convertMsgType(msgType);

@@ -34,11 +34,10 @@ class MsgEthereumTx {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  static fromJson(json: any) {
+  static fromJson(json: any, type?: string) {
     return new MsgEthereumTx({
       json,
-      // type: json['@type'],
-      type: '/stratos.evm.v1.MsgEvmTx', // NOTE: For removing ethereum name from type
+      type: type ?? json['@type'],
       data: json?.data,
       size: json?.size,
       hash: json?.hash,
