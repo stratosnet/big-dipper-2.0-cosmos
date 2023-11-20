@@ -6,7 +6,7 @@
     "graphqlWs": false,
     "votingPowerExponent": 12
   },
-  "previewImage": "https://s3.bigdipper.live/desmos.png",
+  "previewImage": "https://raw.githubusercontent.com/stratosnet/big-dipper-2.0-cosmos/web-stratos@2.17.2/apps/web-stratos/public/images/stratos_bigdipper.png",
   "themes": {
     "default": "light",
     "themeList": [
