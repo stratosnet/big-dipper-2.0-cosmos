@@ -1,5 +1,11 @@
 # shared-utils
 
+## 2.24.0
+
+### Minor Changes
+
+- [#1309](https://github.com/forbole/big-dipper-2.0-cosmos/pull/1309) [`4037aca2`](https://github.com/forbole/big-dipper-2.0-cosmos/commit/4037aca22239ff1696e3ffb6a655d34bcb651458) Thanks [@MonikaCat](https://github.com/MonikaCat)! - add neutron big dipper
+
 ## 2.23.0
 
 ### Minor Changes
