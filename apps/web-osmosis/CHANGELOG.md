@@ -1,5 +1,17 @@
 # unreleased
 
+## 3.0.0
+
+### Major Changes
+
+- [#1317](https://github.com/forbole/big-dipper-2.0-cosmos/pull/1317) [`6f53ac8a`](https://github.com/forbole/big-dipper-2.0-cosmos/commit/6f53ac8a81dc54fb6da171efd163a8b49f777ca7) Thanks [@MonikaCat](https://github.com/MonikaCat)! - update osmosis proposal and params page to display v1
+
+### Patch Changes
+
+- Updated dependencies [[`c6ec239b`](https://github.com/forbole/big-dipper-2.0-cosmos/commit/c6ec239b634bca5789e4ae7dc7c43b91b424b85a), [`61b3c8eb`](https://github.com/forbole/big-dipper-2.0-cosmos/commit/61b3c8ebe308a3d64844f6a01ab11b0461a27c33), [`2aa110c9`](https://github.com/forbole/big-dipper-2.0-cosmos/commit/2aa110c9c7c7965bfa468c07797a820387094834), [`8789ccbd`](https://github.com/forbole/big-dipper-2.0-cosmos/commit/8789ccbd72b8a6267bc2e9704e44632fa89a2870), [`e749a3b0`](https://github.com/forbole/big-dipper-2.0-cosmos/commit/e749a3b0317efb1f659447d336e8dec081aed64d), [`cb67b417`](https://github.com/forbole/big-dipper-2.0-cosmos/commit/cb67b4175dac3958f936472e8fa8d0ff378adb89), [`4037aca2`](https://github.com/forbole/big-dipper-2.0-cosmos/commit/4037aca22239ff1696e3ffb6a655d34bcb651458)]:
+  - ui@3.0.0
+  - shared-utils@2.24.0
+
 ## 2.17.3
 
 ### Patch Changes
