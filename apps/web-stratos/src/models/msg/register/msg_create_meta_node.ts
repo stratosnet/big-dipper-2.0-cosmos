@@ -25,6 +25,8 @@ class MsgCreateMetaNode {
     details: string;
   };
 
+  public beneficiaryAddress: string;
+
   public json: object;
 
   constructor(payload: object) {
@@ -39,6 +41,7 @@ class MsgCreateMetaNode {
       ['description'],
       payload
     );
+    this.beneficiaryAddress = R.pathOr('', ['beneficiaryAddress'], payload);
     this.json = R.pathOr({}, ['json'], payload);
   }
 
@@ -64,6 +67,7 @@ class MsgCreateMetaNode {
         securityContact: R.pathOr('', ['description', 'security_contact'], json),
         details: R.pathOr('', ['description', 'details'], json),
       },
+      beneficiaryAddress: R.pathOr("",['beneficiary_address'],json),
     };
   }
 }
