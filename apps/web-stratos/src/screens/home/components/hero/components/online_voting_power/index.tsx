@@ -27,7 +27,7 @@ const OnlineVotingPower: FC<ComponentDefault> = () => {
       <Typography variant="h2">{t('onlineVotingPower')}</Typography>
       <div className={classes.data}>
         <Typography variant="h3" className="primary__data">
-          {`${votingPowerPercent.format('0,0.00', (n) => Math.floor(n))}%`}
+          {`${votingPowerPercent.format('0,0.00', (n) => Math.round(n))}%`}
         </Typography>
         <Typography variant="body1">
           {numeral(state.votingPower).format('0,0')} /{' '}
