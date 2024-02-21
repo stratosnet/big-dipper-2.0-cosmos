@@ -25,6 +25,8 @@ class MsgCreateResourceNode {
     details: string;
   };
 
+  public beneficiaryAddress: string;
+
   public nodeType: number;
 
   public json: object;
@@ -42,6 +44,7 @@ class MsgCreateResourceNode {
       payload
     );
     this.nodeType = R.pathOr(0, ['nodeType'], payload);
+    this.beneficiaryAddress = R.pathOr('', ['beneficiaryAddress'], payload);
     this.json = R.pathOr({}, ['json'], payload);
   }
 
@@ -68,6 +71,7 @@ class MsgCreateResourceNode {
         details: R.pathOr('', ['description', 'details'], json),
       },
       nodeType: R.pathOr(0, ['node_type'], json),
+      beneficiaryAddress: R.pathOr("",['beneficiary_address'],json),
     });
   }
 }

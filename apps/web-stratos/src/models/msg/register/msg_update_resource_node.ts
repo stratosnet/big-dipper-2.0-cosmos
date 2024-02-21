@@ -20,6 +20,8 @@ class MsgUpdateResourceNode {
 
   public nodeType: number;
 
+  public beneficiaryAddress: string;
+
   public json: object;
 
   constructor(payload: object) {
@@ -33,6 +35,7 @@ class MsgUpdateResourceNode {
     this.networkAddress = R.pathOr('', ['networkAddress'], payload);
     this.ownerAddress = R.pathOr('', ['ownerAddress'], payload);
     this.nodeType = R.pathOr(0, ['nodeType'], payload);
+    this.beneficiaryAddress = R.pathOr('', ['beneficiaryAddress'], payload);
     this.json = R.pathOr({}, ['json'], payload);
   }
 
@@ -51,6 +54,7 @@ class MsgUpdateResourceNode {
       networkAddress: R.pathOr('', ['network_address'], json),
       ownerAddress: R.pathOr('', ['owner_address'], json),
       nodeType: R.pathOr(0, ['node_type'], json),
+      beneficiaryAddress: R.pathOr("",['beneficiary_address'],json),
     };
   }
 }

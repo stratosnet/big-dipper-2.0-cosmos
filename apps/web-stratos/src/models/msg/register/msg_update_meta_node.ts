@@ -18,6 +18,8 @@ class MsgUpdateMetaNode {
 
   public ownerAddress: string;
 
+  public beneficiaryAddress: string;
+
   public json: object;
 
   constructor(payload: object) {
@@ -30,6 +32,7 @@ class MsgUpdateMetaNode {
     );
     this.networkAddress = R.pathOr('', ['networkAddress'], payload);
     this.ownerAddress = R.pathOr('', ['ownerAddress'], payload);
+    this.beneficiaryAddress = R.pathOr('', ['beneficiaryAddress'], payload);
     this.json = R.pathOr({}, ['json'], payload);
   }
 
@@ -47,6 +50,7 @@ class MsgUpdateMetaNode {
       },
       networkAddress: R.pathOr('', ['network_address'], json),
       ownerAddress: R.pathOr('', ['owner_address'], json),
+      beneficiaryAddress: R.pathOr("",['beneficiary_address'],json),
     };
   }
 }
