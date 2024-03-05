@@ -4,7 +4,7 @@
   "extra": {
     "profile": true,
     "graphqlWs": false,
-    "votingPowerExponent": 12
+    "votingPowerExponent": 6
   },
   "previewImage": "https://raw.githubusercontent.com/stratosnet/big-dipper-2.0-cosmos/web-stratos@2.17.2/apps/web-stratos/public/images/stratos_bigdipper.png",
   "themes": {
@@ -270,7 +270,7 @@
         "account": "st"
       },
       "primaryTokenUnit": "wei",
-      "votingPowerTokenUnit": "vp",
+      "votingPowerTokenUnit": "wei",
       "tokenUnits": {
         "wei": {
           "display": "stos",
@@ -279,10 +279,6 @@
         "gwei": {
           "display": "stos",
           "exponent": 9
-        },
-        "vp": {
-          "display": "VP",
-          "exponent": 15
         }
       },
       "endpoints": {
