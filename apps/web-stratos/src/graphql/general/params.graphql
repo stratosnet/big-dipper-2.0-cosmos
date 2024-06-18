@@ -12,7 +12,6 @@ query Params {
     params
   }
   govParams: gov_params(limit: 1, order_by: {height: desc}) {
-    one_row_id
     params
     height
   }
