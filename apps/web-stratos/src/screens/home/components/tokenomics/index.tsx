@@ -47,10 +47,10 @@ const Tokenomics: FC<ComponentDefault> = ({ className }) => {
       fill: theme.palette.custom.tokenomics.three,
     },
     {
-      legendKey: t('unbonded'),
-      percentKey: 'unbondedPercent',
-      value: prettyFormat(tokenomics.unbonded, 18, 2),
-      percent: `${prettyFormat(tokenomics.unbonded.mul(1_000_000).div(tokenomics.total), 4, 6)}%`,
+      legendKey: t('unbonding'),
+      percentKey: 'unbondingPercent',
+      value: prettyFormat(tokenomics.unbonding, 18, 2),
+      percent: `${prettyFormat(tokenomics.unbonding.mul(1_000_000).div(tokenomics.total), 4, 6)}%`,
       fill: theme.palette.custom.tokenomics.four,
     },
     {
