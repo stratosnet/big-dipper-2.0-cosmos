@@ -10,6 +10,7 @@ type TokenomicsState = {
   unbonding: ethers.BigNumber;
   totalMiningSupply: ethers.BigNumber;
   totalMinedTokens: ethers.BigNumber;
+  totalResourceNodesDeposit: ethers.BigNumber;
   toBeMined: ethers.BigNumber;
   circulationSupply: ethers.BigNumber;
   miningReward: ethers.BigNumber;
@@ -32,10 +33,11 @@ export const useTokenomics = () => {
       unbonding: ethers.utils.parseUnits(data.total_unbonding_delegation, 'wei'),
       totalMiningSupply: ethers.utils.parseUnits(data.total_mining_supply, 'wei'),
       totalMinedTokens: ethers.utils.parseUnits(data.total_mined_tokens, 'wei'),
+      totalResourceNodesDeposit: ethers.utils.parseUnits(data.total_resource_nodes_deposit, 'wei'),
       toBeMined: ethers.utils.parseUnits('0', 'wei'),
       circulationSupply: ethers.utils.parseUnits(data.circulation_supply, 'wei'),
       miningReward: ethers.utils.parseUnits(data.chain_mining_reward, 'wei'),
-      resourceNodesDeposit: ethers.utils.parseUnits(data.total_resource_nodes_deposit, 'wei'),
+      resourceNodesDeposit: ethers.utils.parseUnits(data.resource_node_deposit, 'wei'),
     } as TokenomicsState;
     metrics.toBeMined = metrics.totalMiningSupply.sub(metrics.totalMinedTokens);
     return metrics;
